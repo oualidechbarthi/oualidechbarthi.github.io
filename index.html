@@ -585,7 +585,14 @@ footer{background:var(--ink);padding:1.5rem 3rem;display:flex;justify-content:sp
 .fl b{color:rgba(255,255,255,.6);}
 .fr{font-size:.72rem;color:rgba(255,255,255,.15);}
 
-/* ══ SCROLL REVEAL ══ */
+@keyframes float-glow{0%,100%{transform:translateY(-50%) scale(1);}50%{transform:translateY(-50%) scale(1.1);}}
+@keyframes dot-bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes line-grow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+.about-anim-card:hover{transform:translateY(-5px) scale(1.02)!important;border-color:rgba(255,255,255,.15)!important;}
+.edu-hover-card:hover{transform:translateY(-8px)!important;box-shadow:0 20px 50px rgba(0,0,0,.3)!important;}
+.exp-big-card:hover{box-shadow:0 20px 60px rgba(193,18,31,.1);}
+
+
 .sr{opacity:0;transition:opacity .7s ease,transform .7s ease;}
 .sr.up{transform:translateY(32px);}
 .sr.left{transform:translateX(-32px);}
@@ -713,87 +720,186 @@ footer{background:var(--ink);padding:1.5rem 3rem;display:flex;justify-content:sp
         <div style="background:var(--r);"></div><div style="background:var(--gold);"></div><div style="background:var(--g);"></div><div style="background:var(--r);"></div><div style="background:var(--gold);"></div>
       </div>
 
-      <!-- Center content -->
-      <div style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
-        <!-- Moroccan star -->
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin-bottom:0.8rem;animation:av-spin 10s linear infinite;">
-          <path d="M30 3L36 22H56L40.5 33.5L46.5 53L30 42L13.5 53L19.5 33.5L4 22H24Z" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
-          <path d="M30 12L34 23H46L36.5 30L40.5 41L30 34.5L19.5 41L23.5 30L14 23H26Z" fill="rgba(193,18,31,0.25)"/>
-        </svg>
-        <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.3em;color:rgba(255,255,255,0.25);">Cloud</div>
-        <div style="font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;line-height:1;color:var(--gold);letter-spacing:0.05em;">OE</div>
-        <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.3em;color:rgba(255,255,255,0.25);">Engineer</div>
-        <div style="width:40px;height:2px;background:linear-gradient(90deg,var(--r),var(--gold),var(--g));margin:1rem auto;"></div>
-        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.25em;color:rgba(255,255,255,0.15);">Tanger · Rabat · Maroc</div>
-      </div>
+<!-- ══ ABOUT ══ -->
+<section id="about" style="padding:0;background:var(--cream);overflow:hidden;">
 
-      <!-- Bottom info cards -->
-      <div style="position:absolute;bottom:2.5rem;left:2rem;right:2rem;display:flex;gap:0.6rem;z-index:2;">
-        <div style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.7rem;text-align:center;">
-          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;background:linear-gradient(135deg,var(--r),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Azure</div>
-          <div style="font-size:0.58rem;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;">Cloud</div>
+  <!-- À PROPOS — full width cinematic -->
+  <div style="position:relative;min-height:100vh;display:flex;align-items:center;background:var(--ink2);overflow:hidden;">
+
+    <!-- Animated bg -->
+    <div style="position:absolute;inset:0;z-index:0;">
+      <!-- Zellige grid -->
+      <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(201,168,76,.03) 0,rgba(201,168,76,.03) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,rgba(201,168,76,.03) 0,rgba(201,168,76,.03) 1px,transparent 1px,transparent 60px);"></div>
+      <!-- Red glow left -->
+      <div style="position:absolute;left:-150px;top:50%;transform:translateY(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(193,18,31,0.12),transparent 70%);border-radius:50%;animation:float-glow 6s ease-in-out infinite;"></div>
+      <!-- Green glow right -->
+      <div style="position:absolute;right:-150px;bottom:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(45,106,79,0.1),transparent 70%);border-radius:50%;animation:float-glow 8s ease-in-out infinite reverse;"></div>
+    </div>
+
+    <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:8rem 3rem;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+
+      <!-- Left: big animated text -->
+      <div class="sr left">
+        <div style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem;">
+          <span style="display:inline-block;width:22px;height:2px;background:var(--gold);"></span> À propos
         </div>
-        <div style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.7rem;text-align:center;">
-          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;background:linear-gradient(135deg,var(--r),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">LLM</div>
-          <div style="font-size:0.58rem;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;">AI</div>
-        </div>
-        <div style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.7rem;text-align:center;">
-          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">4</div>
-          <div style="font-size:0.58rem;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;">Langues</div>
-        </div>
-      </div>
-    </div><!-- end dark col -->
-    <div class="about-content">
-      <!-- About text -->
-      <div class="sr up">
-        <div class="a-eyebrow">À propos</div>
-        <div class="a-big-text">Passionné par<br>le <span class="r">Cloud</span> &<br>l'<span class="g">Intelligence</span> IA</div>
-        <p class="a-body">
-          Technicien spécialisé en <strong>Cloud Computing</strong> et Infrastructure IT, formé à l'ISTA NTIC de Tanger. Expérience réelle dans le déploiement de modèles <strong>LLM sur Azure</strong> chez MX4.AI à Rabat. Actuellement en cycle ingénieur à l'<strong>EMSI</strong>.
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;color:#fff;line-height:1.0;margin-bottom:1.5rem;">
+          Cloud<br><span style="-webkit-text-stroke:2px var(--r2);color:transparent;">&amp; AI</span><br><span style="color:var(--gold);">Engineer</span>
+        </h2>
+        <p style="font-size:.95rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.9;margin-bottom:2rem;">
+          Technicien spécialisé en <strong style="color:rgba(255,255,255,.75);font-weight:500;">Cloud Computing</strong> et Infrastructure IT, formé à l'ISTA NTIC de Tanger. Expérience réelle dans le déploiement de modèles <strong style="color:rgba(255,255,255,.75);">LLM sur Azure</strong> chez MX4.AI à Rabat. Actuellement en cycle ingénieur à l'<strong style="color:rgba(255,255,255,.75);">EMSI</strong>.
         </p>
-        <div class="stat-row">
-          <div class="stat-box"><div class="stat-n">Azure</div><div class="stat-l">Plateforme principale</div></div>
-          <div class="stat-box"><div class="stat-n">LLM</div><div class="stat-l">Expérience réelle</div></div>
-          <div class="stat-box"><div class="stat-n">4</div><div class="stat-l">Langues parlées</div></div>
+        <!-- Animated line -->
+        <div style="width:100%;height:1px;background:linear-gradient(90deg,var(--r),var(--gold),var(--g),transparent);margin-bottom:2rem;animation:line-grow 1.5s ease forwards;transform-origin:left;"></div>
+        <!-- Info pills -->
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem;">
+          <span style="background:rgba(193,18,31,.12);border:1px solid rgba(193,18,31,.3);color:#ff7b84;font-size:.72rem;font-weight:600;padding:.35rem .8rem;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;">Microsoft Azure</span>
+          <span style="background:rgba(45,106,79,.12);border:1px solid rgba(45,106,79,.3);color:var(--g2);font-size:.72rem;font-weight:600;padding:.35rem .8rem;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;">LLM Deployment</span>
+          <span style="background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold2);font-size:.72rem;font-weight:600;padding:.35rem .8rem;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;">Infrastructure IT</span>
+          <span style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:.72rem;font-weight:600;padding:.35rem .8rem;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;">Réseaux</span>
         </div>
       </div>
 
-      <!-- Experience -->
-      <div class="sr up">
-        <div class="a-eyebrow">Expérience</div>
-        <div class="tl-entry">
-          <div class="tl-date">Mai – Juin 2025</div>
-          <div class="tl-title">Stagiaire Cloud & Intelligence Artificielle</div>
-          <div class="tl-co">🏢 MX4.AI — Rabat, Maroc</div>
-          <ul class="tl-list">
-            <li>Déploiement et supervision d'un modèle LLM sur Microsoft Azure</li>
-            <li>Optimisation des coûts d'inférence et des performances système</li>
-            <li>Configuration monitoring, sécurité et processus de déploiement</li>
-          </ul>
+      <!-- Right: stat cards grid -->
+      <div class="sr right" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="about-anim-card" style="background:rgba(193,18,31,.08);border:1px solid rgba(193,18,31,.2);border-radius:16px;padding:1.8rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;">
+          <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--r),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">Azure</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-top:.4rem;">Plateforme principale</div>
+          <div style="position:absolute;bottom:-10px;right:-10px;font-size:4rem;opacity:.05;">☁️</div>
         </div>
-      </div>
-
-      <!-- Education -->
-      <div class="sr up">
-        <div class="a-eyebrow">Formation</div>
-        <div class="tl-entry" style="border-color:rgba(45,106,79,.3);margin-bottom:1.5rem;">
-          <div class="tl-date" style="color:var(--g2);">2025 – 2026</div>
-          <div class="tl-title">Cycle d'Ingénieur — Informatique & Réseaux</div>
-          <div class="tl-co" style="color:var(--muted);">EMSI — Tanger</div>
+        <div class="about-anim-card" style="background:rgba(45,106,79,.08);border:1px solid rgba(45,106,79,.2);border-radius:16px;padding:1.8rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;">
+          <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">LLM</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-top:.4rem;">Expérience réelle</div>
+          <div style="position:absolute;bottom:-10px;right:-10px;font-size:4rem;opacity:.05;">🤖</div>
         </div>
-        <div class="tl-entry" style="border-color:rgba(201,168,76,.3);margin-bottom:1.5rem;">
-          <div class="tl-date" style="color:var(--gold);">2023 – 2025</div>
-          <div class="tl-title">Technicien Spécialisé Cloud Computing</div>
-          <div class="tl-co" style="color:var(--muted);">ISTA NTIC — Tanger · Programme PIE</div>
+        <div class="about-anim-card" style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:1.8rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;">
+          <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">4</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-top:.4rem;">Langues parlées</div>
+          <div style="position:absolute;bottom:-10px;right:-10px;font-size:4rem;opacity:.05;">🌍</div>
         </div>
-        <div class="tl-entry">
-          <div class="tl-date">2021 – 2023</div>
-          <div class="tl-title">Baccalauréat Sciences Physiques & Chimiques</div>
-          <div class="tl-co" style="color:var(--muted);">Lycée Ibn Al Khatib — Tanger</div>
+        <div class="about-anim-card" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.8rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;">
+          <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:rgba(255,255,255,.5);line-height:1;">EMSI</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-top:.4rem;">Cycle ingénieur</div>
+          <div style="position:absolute;bottom:-10px;right:-10px;font-size:4rem;opacity:.05;">🎓</div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- EXPÉRIENCE — diagonal split -->
+  <div style="position:relative;padding:7rem 0;background:var(--cream);overflow:hidden;">
+    <!-- Diagonal accent -->
+    <div style="position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--r),var(--gold),var(--g));"></div>
+    <!-- Big number bg -->
+    <div style="position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:18rem;font-weight:800;color:rgba(193,18,31,.04);line-height:1;pointer-events:none;user-select:none;">01</div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:0 3rem;position:relative;z-index:1;">
+      <div class="sr up" style="margin-bottom:3rem;">
+        <div style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.25em;color:var(--r);display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
+          <span style="width:22px;height:2px;background:var(--r);display:inline-block;"></span> Expérience
+        </div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);line-height:1.1;">Mon parcours <span style="color:var(--r);">professionnel</span></h2>
+      </div>
+
+      <!-- Experience card — full width creative -->
+      <div class="sr up exp-big-card" style="background:var(--ink2);border-radius:20px;overflow:hidden;position:relative;">
+        <!-- Top bar -->
+        <div style="height:4px;background:linear-gradient(90deg,var(--r),var(--gold),var(--g));"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+          <!-- Left dark -->
+          <div style="padding:3rem;border-right:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-30px;left:-30px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(193,18,31,.08),transparent);"></div>
+            <div style="position:relative;z-index:1;">
+              <div style="font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--r);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;"><span style="width:16px;height:2px;background:var(--r);display:inline-block;"></span>Mai – Juin 2025</div>
+              <h3 style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:.6rem;">Stagiaire Cloud &amp;<br>Intelligence Artificielle</h3>
+              <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(45,106,79,.12);border:1px solid rgba(45,106,79,.25);border-radius:100px;padding:.35rem .9rem;font-size:.78rem;font-weight:600;color:var(--g2);">🏢 MX4.AI — Rabat, Maroc</div>
+              <!-- Animated dots -->
+              <div style="display:flex;gap:.5rem;margin-top:2rem;">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--r);animation:dot-bounce 1.2s ease-in-out infinite;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--gold);animation:dot-bounce 1.2s .2s ease-in-out infinite;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--g2);animation:dot-bounce 1.2s .4s ease-in-out infinite;"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Right: tasks -->
+          <div style="padding:3rem;">
+            <div style="display:flex;flex-direction:column;gap:.9rem;">
+              <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(193,18,31,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)'">
+                <div style="width:28px;height:28px;border-radius:6px;background:rgba(193,18,31,.15);border:1px solid rgba(193,18,31,.25);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;">☁️</div>
+                <div style="font-size:.85rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.6;">Déploiement et supervision d'un modèle LLM sur Microsoft Azure</div>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)'">
+                <div style="width:28px;height:28px;border-radius:6px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;">⚡</div>
+                <div style="font-size:.85rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.6;">Optimisation des coûts d'inférence et des performances système</div>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(45,106,79,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)'">
+                <div style="width:28px;height:28px;border-radius:6px;background:rgba(45,106,79,.15);border:1px solid rgba(45,106,79,.25);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;">🛡️</div>
+                <div style="font-size:.85rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.6;">Configuration monitoring, sécurité et processus de déploiement</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMATION — creative cards -->
+  <div style="position:relative;padding:7rem 0;background:var(--ink2);overflow:hidden;">
+    <!-- Animated bg pattern -->
+    <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(201,168,76,.06) 1px,transparent 0);background-size:40px 40px;animation:ct-bg-move 10s ease-in-out infinite;"></div>
+    <!-- Big number bg -->
+    <div style="position:absolute;left:-1rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:18rem;font-weight:800;color:rgba(201,168,76,.03);line-height:1;pointer-events:none;user-select:none;">02</div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:0 3rem;position:relative;z-index:1;">
+      <div class="sr up" style="margin-bottom:3.5rem;">
+        <div style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
+          <span style="width:22px;height:2px;background:var(--gold);display:inline-block;"></span> Formation
+        </div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.1;">Cursus <span style="color:var(--gold);">académique</span></h2>
+      </div>
+
+      <!-- 3 edu cards horizontal -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+
+        <!-- Card 1 -->
+        <div class="sr up edu-hover-card" style="background:rgba(193,18,31,.06);border:1px solid rgba(193,18,31,.15);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:all .35s;cursor:default;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--r),var(--r2));"></div>
+          <div style="position:absolute;top:-20px;right:-20px;font-size:6rem;opacity:.04;line-height:1;">🎓</div>
+          <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--r2);line-height:1;margin-bottom:.5rem;">2025</div>
+          <div style="font-size:.62rem;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.2rem;">– 2026</div>
+          <div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.5rem;">Cycle d'Ingénieur<br>Informatique &amp; Réseaux</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.5rem;">EMSI — Tanger</div>
+          <!-- Animated indicator -->
+          <div style="display:flex;align-items:center;gap:.4rem;margin-top:1.2rem;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--r);animation:av-pulse 2s ease-in-out infinite;"></div>
+            <span style="font-size:.65rem;color:rgba(255,255,255,.2);text-transform:uppercase;letter-spacing:.1em;">En cours</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="sr up edu-hover-card" style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:all .35s;cursor:default;transform:translateY(20px);">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));"></div>
+          <div style="position:absolute;top:-20px;right:-20px;font-size:6rem;opacity:.04;line-height:1;">💻</div>
+          <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:.5rem;">2023</div>
+          <div style="font-size:.62rem;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.2rem;">– 2025</div>
+          <div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.5rem;">Technicien Spécialisé<br>Cloud Computing</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.5rem;">ISTA NTIC — Tanger</div>
+          <div style="display:inline-block;margin-top:.8rem;font-size:.62rem;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);padding:.2rem .6rem;border-radius:100px;">Programme PIE</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="sr up edu-hover-card" style="background:rgba(45,106,79,.06);border:1px solid rgba(45,106,79,.15);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:all .35s;cursor:default;">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g),var(--g2));"></div>
+          <div style="position:absolute;top:-20px;right:-20px;font-size:6rem;opacity:.04;line-height:1;">⚗️</div>
+          <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--g2);line-height:1;margin-bottom:.5rem;">2021</div>
+          <div style="font-size:.62rem;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.2rem;">– 2023</div>
+          <div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.5rem;">Baccalauréat Sciences<br>Physiques &amp; Chimiques</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.5rem;">Lycée Ibn Al Khatib — Tanger</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- SKILLS -->
