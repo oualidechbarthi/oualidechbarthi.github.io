@@ -204,6 +204,7 @@ nav a:hover,nav.solid a:hover{color:var(--r);background:rgba(193,18,31,0.06);}
 .about-grid{
   display:grid;grid-template-columns:1fr 1fr;
   min-height:100vh;
+  align-items:stretch;
 }
 
 .about-visual{
@@ -211,6 +212,8 @@ nav a:hover,nav.solid a:hover{color:var(--r);background:rgba(193,18,31,0.06);}
   position:sticky;top:0;height:100vh;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
+  align-self:stretch;
+  min-height:100%;
 }
 .about-visual .user-photo{
   position:absolute;inset:0;
@@ -282,7 +285,7 @@ nav a:hover,nav.solid a:hover{color:var(--r);background:rgba(193,18,31,0.06);}
 .a-body strong{color:var(--ink);font-weight:500;}
 
 /* Stat counter boxes */
-.stat-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
 .stat-box{
   border:1px solid var(--border);border-radius:10px;padding:1.2rem;
   position:relative;overflow:hidden;
@@ -652,7 +655,7 @@ footer{background:var(--ink);padding:1.5rem 3rem;display:flex;justify-content:sp
   <div class="diamonds" id="diamonds"></div>
 
   <div class="hero-inner">
-    <div class="hero-eyebrow">Cloud & AI Spesialist &nbsp; Tanger, Maroc 🇲🇦</div>
+    <div class="hero-eyebrow">Cloud & AI Specialist &nbsp; Tanger, Maroc 🇲🇦</div>
     <div class="hero-h1">
       <div class="h1-line"><span class="h1-word h1-w1" style="color:#fff;">Oualid</span></div>
       <div class="h1-line"><span class="h1-word h1-w2">Echbarthi</span></div>
