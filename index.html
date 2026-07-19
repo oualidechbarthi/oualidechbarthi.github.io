@@ -118,6 +118,9 @@ nav a:hover{opacity:1;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;}
 .section-sub{font-size:.78rem;color:rgba(255,255,255,.3);text-align:right;}
 
+/* Exp list wrapper */
+.exp-list{display:flex;flex-direction:column;gap:2rem;}
+
 /* Big exp card */
 .exp-big{background:var(--grey);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:transform .3s;}
 .exp-big:hover{transform:translateY(-4px);}
@@ -374,7 +377,7 @@ footer{background:var(--grey);border-top:1px solid rgba(255,255,255,.05);padding
       <div class="about-label">À propos</div>
       <div class="about-title">Cloud &<br>AI Specialist<br>Marocain</div>
       <p class="about-body">
-        Technicien spécialisé en <strong>Cloud Computing</strong> et Infrastructure IT, formé à l'ISTA NTIC de Tanger. Expérience réelle dans le déploiement de <strong>modèles LLM sur Azure</strong> chez MX4.AI à Rabat. Actuellement en cycle ingénieur à l'<strong>EMSI</strong>. Rigoureux, curieux et adaptable.
+        Technicien spécialisé en <strong>Cloud Computing</strong> et Infrastructure IT, formé à l'ISTA NTIC de Tanger. Expérience concrète du terrain acquise en support technique et en implémentation de systèmes chez Caisse Manager, avec une compréhension solide des architectures <strong>Cloud</strong> et du fonctionnement des modèles LLM développée chez MX4.AI. Toujours en apprentissage continu pour approfondir mes compétences en Cloud et en Intelligence Artificielle. Rigoureux, curieux et adaptable.
       </p>
     </div>
     <div class="stats-row">
@@ -427,23 +430,64 @@ footer{background:var(--grey);border-top:1px solid rgba(255,255,255,.05);padding
         <div class="section-num">02 — Expérience</div>
         <div class="section-title">Parcours<br>Professionnel</div>
       </div>
-      <div class="section-sub">Mai – Juin 2025<br>Rabat, Maroc</div>
+      <div class="section-sub">2025 — Présent<br>Tanger · Rabat, Maroc</div>
     </div>
-    <div class="exp-big sr">
-      <div class="exp-accent"></div>
-      <div class="exp-content">
-        <div class="exp-meta">
-          <div class="exp-date-badge">Mai – Juin 2025</div>
-          <div class="exp-title">Stagiaire Cloud & Intelligence Artificielle</div>
-          <div class="exp-company">🏢 MX4.AI — Rabat</div>
-        </div>
-        <div class="exp-tasks">
-          <div class="exp-task"><span class="task-icon">☁️</span>Déploiement et supervision d'un modèle LLM sur Microsoft Azure</div>
-          <div class="exp-task"><span class="task-icon">⚡</span>Optimisation des coûts d'inférence et des performances système</div>
-          <div class="exp-task"><span class="task-icon">🛡️</span>Configuration des services de monitoring et sécurité cloud</div>
-          <div class="exp-task"><span class="task-icon">🔧</span>Mise en place de processus techniques pour améliorer l'efficacité</div>
+    <div class="exp-list">
+
+      <div class="exp-big sr">
+        <div class="exp-accent"></div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <div class="exp-date-badge">3 mois — En cours</div>
+            <div class="exp-title">Technicien Support & Implémentation</div>
+            <div class="exp-company">🏢 Caisse Manager — Hay Riad, Rabat</div>
+          </div>
+          <div class="exp-tasks">
+            <div class="exp-task"><span class="task-icon">🛠️</span>Support technique et assistance des clients dans la résolution d'incidents logiciels et matériels sur les systèmes de gestion de caisse</div>
+            <div class="exp-task"><span class="task-icon">⚙️</span>Configuration et paramétrage des modules métiers lors de l'implémentation chez les clients</div>
+            <div class="exp-task"><span class="task-icon">🖥️</span>Diagnostic et résolution d'incidents sur serveurs de production (analyse de logs, erreurs applicatives, interruptions de service)</div>
+            <div class="exp-task"><span class="task-icon">🐧</span>Administration de base des systèmes Windows et Linux (Ubuntu) : installation, configuration, formatage et préparation de postes</div>
+            <div class="exp-task"><span class="task-icon">📦</span>Premières notions de Docker appliquées à un environnement de production réel</div>
+            <div class="exp-task"><span class="task-icon">🔍</span>Développement d'une solide méthode d'analyse et de diagnostic face aux problèmes clients</div>
+          </div>
         </div>
       </div>
+
+      <div class="exp-big sr">
+        <div class="exp-accent"></div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <div class="exp-date-badge">1 mois — 2025</div>
+            <div class="exp-title">Stagiaire Cloud & Intelligence Artificielle</div>
+            <div class="exp-company">🏢 MX4.AI — Rabat</div>
+          </div>
+          <div class="exp-tasks">
+            <div class="exp-task"><span class="task-icon">🧠</span>Étude du fonctionnement des modèles LLM et de leurs besoins en ressources pour garantir de bonnes performances</div>
+            <div class="exp-task"><span class="task-icon">☁️</span>Conception d'une architecture Cloud sur Microsoft Azure capable d'héberger et de faire évoluer un modèle LLM</div>
+            <div class="exp-task"><span class="task-icon">⚡</span>Réflexion sur l'optimisation des coûts d'inférence et des performances système</div>
+            <div class="exp-task"><span class="task-icon">🛡️</span>Configuration des services de monitoring et de sécurité cloud</div>
+            <div class="exp-task"><span class="task-icon">🔧</span>Mise en place de processus techniques pour améliorer l'efficacité globale du projet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-big sr">
+        <div class="exp-accent"></div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <div class="exp-date-badge">1 mois — 2025</div>
+            <div class="exp-title">Stagiaire Réseaux & Installation Informatique</div>
+            <div class="exp-company">🏢 MEGADATE — Maroc</div>
+          </div>
+          <div class="exp-tasks">
+            <div class="exp-task"><span class="task-icon">🔌</span>Initiation aux fondamentaux des réseaux informatiques (câblage, adressage IP, équipements réseau)</div>
+            <div class="exp-task"><span class="task-icon">💻</span>Participation à l'installation et à la configuration de postes de travail</div>
+            <div class="exp-task"><span class="task-icon">🧰</span>Premières expériences terrain : montage, maintenance et mise en service de matériel informatique</div>
+            <div class="exp-task"><span class="task-icon">📋</span>Découverte des bonnes pratiques professionnelles : rigueur, organisation et travail en équipe technique</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
