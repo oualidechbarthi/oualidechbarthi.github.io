@@ -2,710 +2,225 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oualid Echbarthi</title>
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oualid Echbarthi — Cloud Computing · Microsoft Azure · IT Support</title>
+<meta name="description" content="Technicien spécialisé en Cloud Computing et Infrastructure IT. Microsoft Azure, support technique, Linux/Windows, Docker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap');
+:root{--primary:#0F172A;--accent:#0D9488;--glow:#2DD4BF;--lightbg:#F8FAFC;--text:#334155;--gray:#64748B;--rule:#E2E8F0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--lightbg);color:var(--text);line-height:1.7;font-size:15px}
+a{color:var(--accent);text-decoration:none}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
 
-:root{
-  --black:#080808;
-  --white:#F5F5F0;
-  --red:#E8192C;
-  --red2:#FF3347;
-  --green:#1B5E3B;
-  --green2:#27AE60;
-  --gold:#D4AF37;
-  --grey:#1A1A1A;
-  --grey2:#2A2A2A;
-  --muted:#666;
-}
+/* SIDEBAR */
+aside{position:fixed;inset:0 auto 0 0;width:340px;background:linear-gradient(160deg,#0F172A,#0b3b45,#0F172A);background-size:240% 240%;animation:bg 18s ease-in-out infinite;color:#CBD5E1;padding:2.6rem 2rem;display:flex;flex-direction:column;overflow:hidden;z-index:100}
+@keyframes bg{50%{background-position:100% 100%}}
+aside::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:var(--accent);filter:blur(90px);opacity:.3;top:-80px;right:-120px;animation:fl 14s ease-in-out infinite}
+@keyframes fl{50%{transform:translate(-60px,160px)}}
+aside>*{position:relative}
+.brand{display:flex;align-items:center;gap:.8rem;margin-bottom:2.4rem;color:#fff;font-weight:600;font-size:.95rem}
+.brand b{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--glow));color:var(--primary);font-weight:700}
+.hero{position:relative;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;min-height:78vh;margin-bottom:4rem}
+.eyebrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}
+.eyebrow span{font-size:.72rem;font-weight:600;color:var(--accent);padding:.3rem .8rem;border:1px solid #99F6E4;background:#F0FDFA;border-radius:999px;opacity:0;animation:fd .8s forwards;animation-delay:calc(var(--i)*.12s + .1s)}
+@keyframes fd{from{transform:translateY(14px);opacity:0}to{opacity:1;transform:none}}
+h1{font-size:clamp(2.8rem,7vw,5.2rem);line-height:.98;color:var(--primary);letter-spacing:-.045em;font-weight:700}
+h1 span{display:inline-block;opacity:0;transform:translateY(70%) rotate(5deg);animation:up .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*50ms + .3s)}
+h1 span.g{color:var(--accent)}
+@keyframes up{to{opacity:1;transform:none}}
+.tg{margin:1.4rem 0 1.2rem;font-size:1.25rem;font-weight:600;color:var(--gray);min-height:1.8em}
+.tg #tg{color:var(--accent)}
+.tg i{display:inline-block;width:2px;height:1.05em;background:var(--accent);margin-left:3px;vertical-align:-.15em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero .lead{max-width:50ch;opacity:0;animation:fd 1s 1.1s forwards}
+.hero .acts{margin-top:1.6rem;opacity:0;animation:fd 1s 1.3s forwards}
+.pw{position:relative;width:300px;height:340px;opacity:0;animation:fd 1.2s .6s forwards}
+.pw::before{content:'';position:absolute;inset:-18px;background:linear-gradient(135deg,var(--accent),var(--glow));opacity:.25;filter:blur(30px);border-radius:50%;animation:fl2 8s ease-in-out infinite}
+@keyframes fl2{50%{transform:scale(1.15) translate(10px,-10px)}}
+.ph{position:relative;width:100%;height:100%;border-radius:62% 38% 55% 45%/50% 55% 45% 50%;overflow:hidden;border:4px solid var(--accent);background:#E2E8F0;animation:mo 10s ease-in-out infinite}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes mo{50%{border-radius:42% 58% 40% 60%/58% 42% 58% 42%}}
+aside nav{position:relative;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,.12);margin-bottom:auto}
+aside nav a{color:#94A3B8;font-size:.85rem;padding:.4rem 0 .4rem 1.1rem;transition:color .25s,padding .25s}
+aside nav a:hover{color:#fff}
+aside nav a.on{color:#fff;padding-left:1.5rem}
+#ind{position:absolute;left:-1px;width:2px;background:var(--glow);height:2rem;transition:top .4s cubic-bezier(.16,1,.3,1);top:0}
+.ct{font-size:.8rem;display:flex;flex-direction:column;gap:.3rem;margin:1.6rem 0 1rem}
+.ct a{color:#CBD5E1}.ct a:hover{color:var(--glow)}
+.av{display:flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:600;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.7rem .9rem}
+.av::before{content:'';flex:none;width:9px;height:9px;border-radius:50%;background:var(--glow);animation:pl 2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(45,212,191,.6)}100%{box-shadow:0 0 0 12px rgba(45,212,191,0)}}
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{background:var(--black);color:var(--white);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none;}
+/* MAIN */
+main{margin-left:340px;padding:4rem 4rem 2rem;max-width:1000px}
+section{margin-bottom:4.5rem;scroll-margin-top:2rem}
+h2{font-size:1.5rem;color:var(--primary);letter-spacing:-.02em;font-weight:700;display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem}
+h2::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform-origin:left;transform:scaleX(0);transition:transform 1s .2s}
+h2.on::after{transform:scaleX(1)}
+.intro{font-size:1.1rem;color:var(--primary);max-width:60ch}
+.intro strong{color:var(--accent)}
 
-/* CURSOR */
-#cur-dot{width:8px;height:8px;background:var(--red);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;top:0;left:0;transition:transform .2s;}
-#cur-ring{width:40px;height:40px;border:1.5px solid rgba(232,25,44,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;top:0;left:0;}
-body:hover #cur-dot{transform:translate(-50%,-50%);}
+/* SPOTLIGHT CARDS */
+.card{position:relative;background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.5rem 1.7rem;margin-bottom:1.1rem;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.card::before{content:'';position:absolute;inset:0;background:radial-gradient(320px circle at var(--x,50%) var(--y,50%),rgba(13,148,136,.13),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-4px);border-color:#99F6E4;box-shadow:0 10px 25px -5px rgba(13,148,136,.08)}
+.card:hover::before{opacity:1}
+.row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
+.card h3{font-size:1rem;color:var(--primary);font-weight:600;line-height:1.35}
+.when{font-size:.78rem;font-weight:600;color:var(--accent);white-space:nowrap}
+.org{font-size:.82rem;color:var(--gray);margin:.15rem 0 .6rem}
+.card p{font-size:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.tags span,.chips span{font-size:.75rem;font-weight:600;padding:.2rem .7rem;border-radius:8px;background:#F0FDFA;color:#0F766E;border:1px solid #99F6E4}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.sk h3{font-size:.8rem;color:var(--accent);font-weight:700;margin-bottom:.4rem}
+.sk div{font-size:.88rem;color:var(--primary)}
+.cr{display:flex;justify-content:space-between;gap:1rem;align-items:center;font-size:.88rem}
+.cr b{display:block;color:var(--primary);font-weight:600}.cr small{color:var(--gray)}
+.cr em{font-style:normal;font-weight:700;color:var(--accent);font-size:.8rem;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{transition:transform .25s,background .25s}.chips span:hover{transform:translateY(-3px);background:#CCFBF1}
+.cta{display:inline-block;margin-top:1.2rem;padding:.8rem 1.5rem;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:.88rem;transition:transform .25s,box-shadow .25s,background .25s}
+.cta:hover{transform:translateY(-3px);background:var(--primary);box-shadow:0 12px 24px -10px rgba(15,23,42,.5)}
+.cta.o{background:transparent;border:1.5px solid var(--accent);color:var(--accent);margin-left:.5rem}
+.cta.o:hover{color:#fff;background:var(--accent)}
+footer{margin-left:340px;padding:1.5rem 4rem;font-size:.78rem;color:var(--gray);border-top:1px solid var(--rule)}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;mix-blend-mode:difference;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);letter-spacing:.1em;}
-nav ul{list-style:none;display:flex;gap:2rem;}
-nav a{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--white);text-decoration:none;opacity:.5;transition:opacity .2s;}
-nav a:hover{opacity:1;}
-
-/* HERO */
-#hero{height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 4rem;overflow:hidden;}
-
-/* Rotating moroccan star bg */
-.hero-star{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:star-rotate 30s linear infinite;opacity:.04;pointer-events:none;}
-
-/* Floating particles */
-.particles{position:absolute;inset:0;pointer-events:none;}
-.p{position:absolute;border-radius:50%;animation:p-float linear infinite;}
-
-/* Big split name */
-.hero-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.5rem;}
-.hero-name-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,14vw,13rem);line-height:.9;letter-spacing:-.02em;overflow:hidden;}
-.hero-name-big .line{display:block;transform:translateY(110%);animation:reveal .9s cubic-bezier(.16,1,.3,1) forwards;}
-.l1{animation-delay:.1s;}
-.l2{animation-delay:.25s;color:var(--red);-webkit-text-stroke:0px;text-shadow:0 0 60px rgba(232,25,44,.3);}
-
-.hero-right{text-align:right;padding-bottom:.5rem;}
-.hero-role{font-size:.8rem;font-weight:300;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.4);margin-bottom:.5rem;animation:fade-up .8s .5s both;}
-.hero-location{font-size:.75rem;color:rgba(255,255,255,.25);letter-spacing:.1em;animation:fade-up .8s .6s both;}
-.hero-flag{font-size:1.2rem;animation:fade-up .8s .7s both;display:block;margin-top:.3rem;}
-
-/* Horizontal scroll line */
-.hero-line{display:flex;align-items:center;gap:2rem;overflow:hidden;padding:.8rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);animation:fade-up .8s .8s both;}
-.hero-line-inner{display:flex;gap:3rem;animation:line-scroll 12s linear infinite;white-space:nowrap;}
-.hero-line-item{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.3);}
-.hero-line-item.r{color:var(--red);}
-
-/* Scroll indicator */
-.scroll-ind{position:absolute;bottom:2rem;right:3rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fade-up .8s 1s both;}
-.scroll-line{width:1px;height:60px;background:rgba(255,255,255,.15);position:relative;overflow:hidden;}
-.scroll-line::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--red);animation:scroll-drop 1.5s ease-in-out infinite;}
-.scroll-txt{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.2);writing-mode:vertical-rl;}
-
-@keyframes reveal{to{transform:translateY(0);}}
-@keyframes fade-up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
-@keyframes line-scroll{to{transform:translateX(-50%);}}
-@keyframes scroll-drop{0%{top:-100%;}100%{top:100%;}}
-@keyframes star-rotate{to{transform:translate(-50%,-50%) rotate(360deg);}}
-@keyframes p-float{0%{transform:translateY(0) rotate(0);opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{transform:translateY(-100vh) rotate(360deg);opacity:0;}}
-
-/* ABOUT */
-#about{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;}
-
-.about-left{background:var(--white);padding:6rem 4rem;display:flex;flex-direction:column;justify-content:space-between;color:var(--black);}
-.about-num{font-family:'Bebas Neue',sans-serif;font-size:8rem;color:rgba(0,0,0,.06);line-height:1;}
-.about-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--red);margin-bottom:1rem;}
-.about-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);line-height:.95;color:var(--black);margin-bottom:1.5rem;}
-.about-body{font-size:.95rem;font-weight:300;line-height:1.9;color:rgba(0,0,0,.6);}
-.about-body strong{color:var(--black);font-weight:600;}
-
-/* Code bio */
-.about-right{background:var(--grey);padding:6rem 4rem;display:flex;flex-direction:column;gap:2rem;justify-content:center;}
-.code-window{background:var(--black);border-radius:10px;overflow:hidden;}
-.cw-bar{background:#1C1C1C;padding:.6rem 1rem;display:flex;gap:.4rem;align-items:center;}
-.cw-d{width:10px;height:10px;border-radius:50%;}
-.cw-dr{background:#FF5F57;}
-.cw-dy{background:#FEBC2E;}
-.cw-dg{background:#28C840;}
-.cw-body{padding:1.5rem;font-family:'Outfit',monospace;font-size:.78rem;line-height:2.1;}
-.ck{color:#CF8DFB;} .cv{color:#F0A500;} .cs{color:#4FC1FF;} .cc{color:#666;}
-
-/* Stats row */
-.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);}
-.stat-item{background:var(--grey);padding:1.5rem;text-align:center;}
-.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;}
-.stat-n.r{color:var(--red);}
-.stat-n.g{color:var(--green2);}
-.stat-n.w{color:var(--white);}
-.stat-l{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-top:.2rem;}
-
-/* EXPERIENCE */
-#experience{padding:7rem 0;background:var(--black);position:relative;overflow:hidden;}
-#experience::before{content:'EXPERIENCE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:18vw;color:rgba(255,255,255,.02);top:50%;transform:translateY(-50%);left:0;pointer-events:none;white-space:nowrap;}
-
-.exp-inner{max-width:1200px;margin:0 auto;padding:0 3rem;}
-.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;}
-.section-num{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--red);letter-spacing:.1em;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;}
-.section-sub{font-size:.78rem;color:rgba(255,255,255,.3);text-align:right;}
-
-/* Exp list wrapper */
-.exp-list{display:flex;flex-direction:column;gap:2rem;}
-
-/* Big exp card */
-.exp-big{background:var(--grey);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:transform .3s;}
-.exp-big:hover{transform:translateY(-4px);}
-.exp-accent{height:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green2));}
-.exp-content{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.exp-meta{padding:3rem;border-right:1px solid rgba(255,255,255,.05);}
-.exp-date-badge{display:inline-block;background:rgba(232,25,44,.1);border:1px solid rgba(232,25,44,.2);color:var(--red);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:100px;margin-bottom:1.2rem;}
-.exp-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1.1;margin-bottom:.8rem;}
-.exp-company{display:inline-flex;align-items:center;gap:.5rem;background:rgba(39,174,96,.08);border:1px solid rgba(39,174,96,.2);color:var(--green2);font-size:.8rem;font-weight:500;padding:.4rem 1rem;border-radius:100px;}
-.exp-tasks{padding:3rem;display:flex;flex-direction:column;gap:.8rem;}
-.exp-task{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.2rem;font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6;font-weight:300;display:flex;gap:.8rem;align-items:flex-start;transition:all .2s;}
-.exp-task:hover{background:rgba(255,255,255,.06);border-color:rgba(232,25,44,.2);color:rgba(255,255,255,.8);}
-.task-icon{font-size:.9rem;flex-shrink:0;margin-top:.05rem;}
-
-/* EDUCATION */
-#education{padding:7rem 0;background:var(--grey);position:relative;overflow:hidden;}
-#education::before{content:'EDU';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:25vw;color:rgba(255,255,255,.015);top:50%;transform:translateY(-50%);right:0;pointer-events:none;}
-
-.edu-inner{max-width:1200px;margin:0 auto;padding:0 3rem;}
-
-/* Timeline style */
-.edu-timeline{display:flex;flex-direction:column;gap:2px;}
-.edu-entry{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:2rem 2.5rem;display:grid;grid-template-columns:120px 1fr auto;gap:2rem;align-items:center;transition:all .3s;position:relative;overflow:hidden;}
-.edu-entry::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;transition:width .3s;}
-.edu-entry:hover{background:rgba(255,255,255,.06);}
-.edu-entry:hover::before{width:3px;}
-.ee-r::before{background:var(--red);}
-.ee-g::before{background:var(--green2);}
-.ee-gold::before{background:var(--gold);}
-
-.edu-yr{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;line-height:1.1;}
-.ee-r .edu-yr{color:var(--red);}
-.ee-g .edu-yr{color:var(--green2);}
-.ee-gold .edu-yr{color:var(--gold);}
-
-.edu-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--white);margin-bottom:.3rem;}
-.edu-school{font-size:.82rem;color:rgba(255,255,255,.35);font-weight:300;}
-.edu-badge{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;}
-.eb-r{background:rgba(232,25,44,.1);border:1px solid rgba(232,25,44,.2);color:var(--red);}
-.eb-g{background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.2);color:var(--green2);}
-.eb-gold{background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);color:var(--gold);}
-
-/* SKILLS */
-#skills{padding:7rem 0;background:var(--black);}
-.sk-inner{max-width:1200px;margin:0 auto;padding:0 3rem;}
-.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:0;}
-
-/* Skill bars animated */
-.skill-cat-title{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--red);margin-bottom:1.5rem;}
-.sk-item{margin-bottom:1.2rem;}
-.sk-top{display:flex;justify-content:space-between;margin-bottom:.5rem;}
-.sk-name{font-size:.88rem;font-weight:500;}
-.sk-pct{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:rgba(255,255,255,.3);}
-.sk-track{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
-.sk-fill{height:100%;border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.16,1,.3,1);}
-.sk-fill.on{transform:scaleX(1);}
-.sf-r{background:linear-gradient(90deg,var(--red),var(--gold));}
-.sf-g{background:linear-gradient(90deg,var(--green),var(--green2));}
-
-/* Soft tags */
-.soft-grid{display:flex;flex-wrap:wrap;gap:.5rem;}
-.soft-t{font-size:.75rem;font-weight:500;padding:.4rem 1rem;border-radius:100px;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);transition:all .2s;cursor:default;}
-.soft-t:hover{border-color:var(--red);color:var(--white);}
-
-/* Lang */
-.lang-item{display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.lang-flag{font-size:1.3rem;}
-.lang-name{font-size:.88rem;font-weight:500;flex:1;}
-.lang-lv{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .6rem;border-radius:100px;}
-.ll-r{background:rgba(232,25,44,.1);border:1px solid rgba(232,25,44,.2);color:var(--red);}
-.ll-g{background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.2);color:var(--green2);}
-.ll-y{background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);color:var(--gold);}
-
-/* PROJECTS */
-#projects{padding:7rem 0;background:var(--grey);position:relative;overflow:hidden;}
-#projects::before{content:'WORK';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:20vw;color:rgba(255,255,255,.02);bottom:0;left:0;pointer-events:none;line-height:.8;}
-
-.pr-inner{max-width:1200px;margin:0 auto;padding:0 3rem;}
-.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-
-.pr-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:2rem;transition:all .35s;position:relative;overflow:hidden;}
-.pr-card::after{content:'';position:absolute;inset:0;opacity:0;transition:opacity .35s;}
-.pr-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.12);}
-.pr-card:nth-child(1):hover{box-shadow:0 20px 60px rgba(232,25,44,.1);}
-.pr-card:nth-child(2):hover{box-shadow:0 20px 60px rgba(39,174,96,.1);}
-.pr-card:nth-child(3):hover{box-shadow:0 20px 60px rgba(212,175,55,.1);}
-
-.pr-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:1;margin-bottom:.5rem;transition:color .3s;}
-.pr-card:nth-child(1) .pr-num{color:rgba(232,25,44,.15);}
-.pr-card:nth-child(1):hover .pr-num{color:rgba(232,25,44,.3);}
-.pr-card:nth-child(2) .pr-num{color:rgba(39,174,96,.15);}
-.pr-card:nth-child(2):hover .pr-num{color:rgba(39,174,96,.3);}
-.pr-card:nth-child(3) .pr-num{color:rgba(212,175,55,.15);}
-.pr-card:nth-child(3):hover .pr-num{color:rgba(212,175,55,.3);}
-
-.pr-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;margin-bottom:.6rem;color:var(--white);}
-.pr-desc{font-size:.83rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;margin-bottom:1.2rem;}
-.pr-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
-.pr-tag{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:.2rem .6rem;border-radius:100px;border:1px solid;}
-.pt-r{border-color:rgba(232,25,44,.2);color:var(--red);}
-.pt-g{border-color:rgba(39,174,96,.2);color:var(--green2);}
-.pt-y{border-color:rgba(212,175,55,.2);color:var(--gold);}
-
-/* CONTACT */
-#contact{padding:7rem 0;background:var(--black);position:relative;overflow:hidden;}
-.ct-inner{max-width:1200px;margin:0 auto;padding:0 3rem;}
-
-/* Giant text */
-.ct-giant{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,11vw,10rem);line-height:.9;margin-bottom:3rem;}
-.ct-giant .r{color:var(--red);display:block;}
-.ct-giant .stroke{-webkit-text-stroke:1px rgba(255,255,255,.2);color:transparent;display:block;}
-
-.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-
-/* Contact cards */
-.ct-cards{display:flex;flex-direction:column;gap:1px;}
-.ct-card{background:var(--grey);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;transition:all .2s;cursor:pointer;border-radius:0;}
-.ct-card:first-child{border-radius:12px 12px 0 0;}
-.ct-card:last-child{border-radius:0 0 12px 12px;}
-.ct-card:hover{background:var(--grey2);transform:translateX(6px);}
-.ct-icon-wrap{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;transition:transform .2s;}
-.ct-card:hover .ct-icon-wrap{transform:scale(1.1) rotate(-5deg);}
-.ci-r{background:rgba(232,25,44,.12);border:1px solid rgba(232,25,44,.2);}
-.ci-g{background:rgba(39,174,96,.12);border:1px solid rgba(39,174,96,.2);}
-.ci-b{background:rgba(10,102,194,.12);border:1px solid rgba(10,102,194,.2);}
-.ci-y{background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);}
-.ct-type{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.25);margin-bottom:.25rem;}
-.ct-val{font-size:.9rem;color:var(--white);font-weight:500;}
-.ct-arr{margin-left:auto;font-size:1.2rem;color:rgba(255,255,255,.15);transition:all .2s;}
-.ct-card:hover .ct-arr{color:var(--red);transform:translateX(4px);}
-
-/* Availability panel */
-.avail-panel{background:var(--grey);border-radius:12px;padding:2.5rem;display:flex;flex-direction:column;gap:1.5rem;}
-.avail-dot-wrap{display:flex;align-items:center;gap:.8rem;}
-.av-dot{width:10px;height:10px;border-radius:50%;background:var(--green2);animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(39,174,96,.4);}50%{box-shadow:0 0 0 10px rgba(39,174,96,0);}}
-.av-status{font-size:.82rem;color:var(--green2);font-weight:500;}
-.av-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1.1;}
-.av-sub{font-size:.83rem;color:rgba(255,255,255,.35);font-weight:300;line-height:1.7;}
-.av-flag{display:flex;gap:4px;align-items:center;margin-top:.5rem;}
-.af-r{width:24px;height:15px;background:var(--red);border-radius:2px;}
-.af-g{width:8px;height:15px;background:var(--green);border-radius:1px;}
-.af-txt{font-size:.7rem;color:rgba(255,255,255,.25);margin-left:.5rem;text-transform:uppercase;letter-spacing:.1em;}
-
-/* FOOTER */
-footer{background:var(--grey);border-top:1px solid rgba(255,255,255,.05);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
-.ft-l{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:rgba(255,255,255,.4);}
-.ft-r{font-size:.7rem;color:rgba(255,255,255,.2);}
-
-/* MARQUEE BETWEEN SECTIONS */
-.mq-wrap{overflow:hidden;background:var(--red);padding:.6rem 0;}
-.mq-track{display:flex;animation:mq 18s linear infinite;width:max-content;}
-.mq-item{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.15em;color:rgba(255,255,255,.8);padding:0 2.5rem;white-space:nowrap;display:flex;align-items:center;gap:2rem;}
-.mq-item::after{content:'★';font-size:.5rem;color:rgba(255,255,255,.4);}
-@keyframes mq{to{transform:translateX(-50%);}}
-
-/* SCROLL REVEAL */
-.sr{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
-.sr.sl{transform:translateX(-30px);}
-.sr.sr2{transform:translateX(30px);}
-.sr.vis{opacity:1;transform:none;}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  #about{grid-template-columns:1fr;}
-  .exp-content{grid-template-columns:1fr;}
-  .sk-grid{grid-template-columns:1fr;}
-  .pr-grid{grid-template-columns:1fr;}
-  .ct-layout{grid-template-columns:1fr;}
-  nav ul{display:none;}
-  nav{padding:1rem 1.5rem;}
-  #hero,.exp-inner,.edu-inner,.sk-inner,.pr-inner,.ct-inner{padding-left:1.5rem;padding-right:1.5rem;}
-}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s;transition-delay:var(--d,0s)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,h1 span,.eyebrow span,.hero .lead,.hero .acts,.pw{opacity:1!important;transform:none!important}h2::after{transform:none!important}html{scroll-behavior:auto}}
+@media(max-width:900px){aside{position:relative;width:100%;padding:2rem 1.5rem}aside nav{display:none}.ct{margin-bottom:1rem}main,footer{margin-left:0;padding:2.5rem 1.5rem}.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;min-height:0}.pw{order:-1;width:200px;height:230px}}
 </style>
 </head>
 <body>
-
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">OE.</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Exp</a></li>
-    <li><a href="#education">Edu</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<aside>
+<div class="brand"><b>OE</b><span>Oualid Echbarthi</span></div>
+<nav id="nav">
+<span id="ind"></span>
+<a href="#profil" class="on">Profil</a>
+<a href="#experience">Expérience</a>
+<a href="#formation">Formation</a>
+<a href="#projets">Projets</a>
+<a href="#competences">Compétences</a>
+<a href="#certifications">Certifications &amp; langues</a>
+<a href="#contact">Contact</a>
 </nav>
-
-<!-- HERO -->
-<section id="hero">
-  <!-- Big rotating star -->
-  <div class="hero-star">
-    <svg width="900" height="900" viewBox="0 0 900 900" fill="none">
-      <path d="M450 50L500 300H750L550 450L620 700L450 570L280 700L350 450L150 300H400Z" fill="none" stroke="white" stroke-width="1"/>
-      <path d="M450 150L485 330H660L520 430L565 610L450 520L335 610L380 430L240 330H415Z" fill="none" stroke="white" stroke-width=".5"/>
-      <circle cx="450" cy="450" r="300" fill="none" stroke="white" stroke-width=".3"/>
-      <circle cx="450" cy="450" r="200" fill="none" stroke="white" stroke-width=".3"/>
-      <circle cx="450" cy="450" r="100" fill="none" stroke="white" stroke-width=".5"/>
-    </svg>
-  </div>
-
-  <!-- Particles -->
-  <div class="particles" id="ptcls"></div>
-
-  <div class="hero-top">
-    <div class="hero-name-big">
-      <span class="line l1">OUALID</span>
-      <span class="line l2">ECHBARTHI</span>
-    </div>
-    <div class="hero-right">
-      <div class="hero-role">Cloud & AI Specialist</div>
-      <div class="hero-location">Microsoft Azure · LLM</div>
-      <span class="hero-flag">🇲🇦</span>
-    </div>
-  </div>
-
-  <div class="hero-line">
-    <div class="hero-line-inner">
-      <span class="hero-line-item r">Azure Cloud</span>
-      <span class="hero-line-item">LLM Deployment</span>
-      <span class="hero-line-item r">Infrastructure IT</span>
-      <span class="hero-line-item">MX4.AI Rabat</span>
-      <span class="hero-line-item r">EMSI Tanger</span>
-      <span class="hero-line-item">Monitoring</span>
-      <span class="hero-line-item r">Sécurité Cloud</span>
-      <span class="hero-line-item">PHP & SQL</span>
-      <span class="hero-line-item r">Azure Cloud</span>
-      <span class="hero-line-item">LLM Deployment</span>
-      <span class="hero-line-item r">Infrastructure IT</span>
-      <span class="hero-line-item">MX4.AI Rabat</span>
-      <span class="hero-line-item r">EMSI Tanger</span>
-      <span class="hero-line-item">Monitoring</span>
-      <span class="hero-line-item r">Sécurité Cloud</span>
-      <span class="hero-line-item">PHP & SQL</span>
-    </div>
-  </div>
-
-  <div class="scroll-ind">
-    <div class="scroll-line"></div>
-    <div class="scroll-txt">Scroll</div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-left sr sl">
-    <div>
-      <div class="about-num">01</div>
-      <div class="about-label">À propos</div>
-      <div class="about-title">Cloud &<br>AI Specialist<br>Marocain</div>
-      <p class="about-body">
-        Technicien spécialisé en <strong>Cloud Computing</strong> et Infrastructure IT, formé à l'ISTA NTIC de Tanger. Expérience concrète du terrain acquise en support technique et en implémentation de systèmes chez Caisse Manager, avec une compréhension solide des architectures <strong>Cloud</strong> et du fonctionnement des modèles LLM développée chez MX4.AI. Toujours en apprentissage continu pour approfondir mes compétences en Cloud et en Intelligence Artificielle. Rigoureux, curieux et adaptable.
-      </p>
-    </div>
-    <div class="stats-row">
-      <div class="stat-item"><div class="stat-n r">Azure</div><div class="stat-l">Cloud</div></div>
-      <div class="stat-item"><div class="stat-n g">LLM</div><div class="stat-l">AI</div></div>
-      <div class="stat-item"><div class="stat-n w">4</div><div class="stat-l">Langues</div></div>
-    </div>
-  </div>
-
-  <div class="about-right sr sr2">
-    <div class="code-window">
-      <div class="cw-bar">
-        <div class="cw-d cw-dr"></div>
-        <div class="cw-d cw-dy"></div>
-        <div class="cw-d cw-dg"></div>
-      </div>
-      <div class="cw-body">
-        <div><span class="ck">const</span> oualid = {</div>
-        <div>&nbsp;&nbsp;<span class="cv">nom</span>: <span class="cs">"Echbarthi Oualid"</span>,</div>
-        <div>&nbsp;&nbsp;<span class="cv">né</span>: <span class="cs">"24 Février 2005"</span>,</div>
-        <div>&nbsp;&nbsp;<span class="cv">ville</span>: <span class="cs">"Tanger → Rabat"</span>,</div>
-        <div>&nbsp;&nbsp;<span class="cv">email</span>: <span class="cs">"oualidchbarthi@gmail.com"</span>,</div>
-        <div>&nbsp;&nbsp;<span class="cv">tel</span>: <span class="cs">"+212 660 029 134"</span>,</div>
-        <div>&nbsp;&nbsp;<span class="cv">formation</span>: <span class="cs">"EMSI Ingénieur"</span>,</div>
-        <div>&nbsp;&nbsp;<span class="cv">status</span>: <span class="ck">true</span>, <span class="cc">// disponible</span></div>
-        <div>};</div>
-      </div>
-    </div>
-
-    <div class="lang-item"><span class="lang-flag">🇲🇦</span><span class="lang-name">Arabe</span><span class="lang-lv ll-r">Natif</span></div>
-    <div class="lang-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-lv ll-g">B2</span></div>
-    <div class="lang-item"><span class="lang-flag">🇬🇧</span><span class="lang-name">Anglais</span><span class="lang-lv ll-g">B2</span></div>
-    <div class="lang-item" style="border-bottom:none;"><span class="lang-flag">🇩🇪</span><span class="lang-name">Allemand</span><span class="lang-lv ll-y">A1</span></div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="mq-wrap">
-  <div class="mq-track">
-    <span class="mq-item">Cloud Computing</span><span class="mq-item">Azure</span><span class="mq-item">LLM</span><span class="mq-item">Infrastructure IT</span><span class="mq-item">MX4.AI</span><span class="mq-item">EMSI Tanger</span><span class="mq-item">Maroc</span><span class="mq-item">Ingénieur</span>
-    <span class="mq-item">Cloud Computing</span><span class="mq-item">Azure</span><span class="mq-item">LLM</span><span class="mq-item">Infrastructure IT</span><span class="mq-item">MX4.AI</span><span class="mq-item">EMSI Tanger</span><span class="mq-item">Maroc</span><span class="mq-item">Ingénieur</span>
-  </div>
+<div class="ct">
+<span>Salé, Maroc</span>
+<a href="tel:+212660029134">+212 660 029 134</a>
+<a href="mailto:oualidchbarthi@gmail.com">oualidchbarthi@gmail.com</a>
+<a href="https://www.linkedin.com/in/oualid-echbarthi-10880b313/" target="_blank" rel="noopener">linkedin.com/in/oualid-echbarthi</a>
 </div>
+<div class="av">Disponible immédiatement</div>
+</aside>
 
-<!-- EXPERIENCE -->
+<main>
+<header class="hero" id="top">
+<div>
+<div class="eyebrow"><span style="--i:0">Cloud Computing</span><span style="--i:1">Microsoft Azure</span><span style="--i:2">IT Support</span></div>
+<h1 id="name" aria-label="Oualid Echbarthi"></h1>
+<div class="tg"><span id="tg">Cloud Computing</span><i></i></div>
+<p class="lead">Technicien spécialisé en Cloud et Infrastructure IT, basé à Salé. Disponible immédiatement pour un stage ou un poste junior.</p>
+<div class="acts"><a class="cta" href="#contact">Me contacter</a><a class="cta o" href="#experience">Voir mon parcours</a></div>
+</div>
+<div class="pw"><div class="ph"><img src="photo.jpeg" alt="Portrait d'Oualid Echbarthi" onerror="this.style.visibility='hidden'"></div></div>
+</header>
+
+<section id="profil">
+<h2 class="rv">Profil</h2>
+<p class="intro rv">Technicien spécialisé en <strong>Cloud Computing</strong> et Infrastructure IT, formé à l'ISTA NTIC de Tanger. Expérience terrain en <strong>support technique</strong>, implémentation et administration Windows/Linux chez Caisse Manager. Architecture Cloud sur <strong>Microsoft Azure</strong> et étude des besoins en infrastructure pour les LLM chez MX4.AI.</p>
+</section>
+
 <section id="experience">
-  <div class="exp-inner">
-    <div class="section-header sr">
-      <div>
-        <div class="section-num">02 — Expérience</div>
-        <div class="section-title">Parcours<br>Professionnel</div>
-      </div>
-      <div class="section-sub">2025 — Présent<br>Tanger · Rabat, Maroc</div>
-    </div>
-    <div class="exp-list">
-
-      <div class="exp-big sr">
-        <div class="exp-accent"></div>
-        <div class="exp-content">
-          <div class="exp-meta">
-            <div class="exp-date-badge">3 mois — En cours</div>
-            <div class="exp-title">Technicien Support & Implémentation</div>
-            <div class="exp-company">🏢 Caisse Manager — Hay Riad, Rabat</div>
-          </div>
-          <div class="exp-tasks">
-            <div class="exp-task"><span class="task-icon">🛠️</span>Support technique et assistance des clients dans la résolution d'incidents logiciels et matériels sur les systèmes de gestion de caisse</div>
-            <div class="exp-task"><span class="task-icon">⚙️</span>Configuration et paramétrage des modules métiers lors de l'implémentation chez les clients</div>
-            <div class="exp-task"><span class="task-icon">🖥️</span>Diagnostic et résolution d'incidents sur serveurs de production (analyse de logs, erreurs applicatives, interruptions de service)</div>
-            <div class="exp-task"><span class="task-icon">🐧</span>Administration de base des systèmes Windows et Linux (Ubuntu) : installation, configuration, formatage et préparation de postes</div>
-            <div class="exp-task"><span class="task-icon">📦</span>Premières notions de Docker appliquées à un environnement de production réel</div>
-            <div class="exp-task"><span class="task-icon">🔍</span>Développement d'une solide méthode d'analyse et de diagnostic face aux problèmes clients</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-big sr">
-        <div class="exp-accent"></div>
-        <div class="exp-content">
-          <div class="exp-meta">
-            <div class="exp-date-badge">1 mois — 2025</div>
-            <div class="exp-title">Stagiaire Cloud & Intelligence Artificielle</div>
-            <div class="exp-company">🏢 MX4.AI — Rabat</div>
-          </div>
-          <div class="exp-tasks">
-            <div class="exp-task"><span class="task-icon">🧠</span>Étude du fonctionnement des modèles LLM et de leurs besoins en ressources pour garantir de bonnes performances</div>
-            <div class="exp-task"><span class="task-icon">☁️</span>Conception d'une architecture Cloud sur Microsoft Azure capable d'héberger et de faire évoluer un modèle LLM</div>
-            <div class="exp-task"><span class="task-icon">⚡</span>Réflexion sur l'optimisation des coûts d'inférence et des performances système</div>
-            <div class="exp-task"><span class="task-icon">🛡️</span>Configuration des services de monitoring et de sécurité cloud</div>
-            <div class="exp-task"><span class="task-icon">🔧</span>Mise en place de processus techniques pour améliorer l'efficacité globale du projet</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-big sr">
-        <div class="exp-accent"></div>
-        <div class="exp-content">
-          <div class="exp-meta">
-            <div class="exp-date-badge">1 mois — 2025</div>
-            <div class="exp-title">Stagiaire Réseaux & Installation Informatique</div>
-            <div class="exp-company">🏢 MEGADATE — Maroc</div>
-          </div>
-          <div class="exp-tasks">
-            <div class="exp-task"><span class="task-icon">🔌</span>Initiation aux fondamentaux des réseaux informatiques (câblage, adressage IP, équipements réseau)</div>
-            <div class="exp-task"><span class="task-icon">💻</span>Participation à l'installation et à la configuration de postes de travail</div>
-            <div class="exp-task"><span class="task-icon">🧰</span>Premières expériences terrain : montage, maintenance et mise en service de matériel informatique</div>
-            <div class="exp-task"><span class="task-icon">📋</span>Découverte des bonnes pratiques professionnelles : rigueur, organisation et travail en équipe technique</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<h2 class="rv">Expérience professionnelle</h2>
+<div class="card rv"><div class="row"><h3>Technicien Support &amp; Implémentation</h3><span class="when">2026 · 5 mois</span></div><div class="org">Caisse Manager · Hay Riad, Rabat</div>
+<p>Support technique client et configuration des modules métiers pour une solution SaaS de point de vente (POS). Diagnostic et résolution d'incidents sur serveurs de production : erreurs HTTP (502, 409, 405, 400) sur backend Express/Node.js/MongoDB, conflits d'IP d'imprimantes réseau, connectivité des balances, impression de tickets KDS. Administration Windows/Linux (Ubuntu), conteneurs Docker et processus PM2, accès à distance (RustDesk, AnyDesk) pour le support client.</p></div>
+<div class="card rv"><div class="row"><h3>Stagiaire — Cloud &amp; Intelligence Artificielle</h3><span class="when">2025 · 1 mois</span></div><div class="org">MX4.AI · Rabat</div>
+<p>Étude du fonctionnement des grands modèles de langage (LLM) et de leurs besoins en ressources : calcul (GPU/CPU), mémoire, stockage, scalabilité. Conception d'une architecture Cloud sur Microsoft Azure pour héberger un LLM, avec dimensionnement de l'infrastructure. Sensibilisation au monitoring, à la supervision et à la gestion des coûts.</p></div>
+<div class="card rv"><div class="row"><h3>Stagiaire — Réseaux &amp; Installation</h3><span class="when">2025 · 1 mois</span></div><div class="org">MEGADATE · Maroc</div>
+<p>Câblage réseau (cuivre et fibre), adressage IP (sous-réseaux, statique/DHCP), mise en place d'équipements réseau (switchs, routeurs, points d'accès). Installation et configuration de postes de travail et de caméras de vidéosurveillance (CCTV). Dépannage matériel et réseau de premier niveau sur site.</p></div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="edu-inner">
-    <div class="section-header sr">
-      <div>
-        <div class="section-num">03 — Formation</div>
-        <div class="section-title">Cursus<br>Académique</div>
-      </div>
-    </div>
-    <div class="edu-timeline">
-      <div class="edu-entry ee-r sr">
-        <div class="edu-yr">2025<br>→ 2026</div>
-        <div>
-          <div class="edu-title">Cycle d'Ingénieur — Informatique & Réseaux</div>
-          <div class="edu-school">École Marocaine des Sciences de l'Ingénieur — EMSI Tanger</div>
-        </div>
-        <span class="edu-badge eb-r">En cours</span>
-      </div>
-      <div class="edu-entry ee-g sr">
-        <div class="edu-yr">2023<br>→ 2025</div>
-        <div>
-          <div class="edu-title">Technicien Spécialisé Cloud Computing</div>
-          <div class="edu-school">ISTA NTIC — Tanger · Infrastructure Digitale</div>
-        </div>
-        <span class="edu-badge eb-g">PIE</span>
-      </div>
-      <div class="edu-entry ee-gold sr">
-        <div class="edu-yr">2021<br>→ 2023</div>
-        <div>
-          <div class="edu-title">Baccalauréat Sciences Physiques & Chimiques</div>
-          <div class="edu-school">Lycée Ibn Al Khatib — Tanger</div>
-        </div>
-        <span class="edu-badge eb-gold">Bac</span>
-      </div>
-    </div>
-  </div>
+<section id="formation">
+<h2 class="rv">Formation</h2>
+<div class="card rv"><div class="row"><h3>Cycle Ingénieur — Informatique &amp; Réseaux</h3><span class="when">2025–2026</span></div><div class="org">EMSI · Tanger</div><p>Première année du cycle ingénieur en informatique et réseaux.</p></div>
+<div class="card rv"><div class="row"><h3>Technicien Spécialisé — Cloud Computing</h3><span class="when">2023–2025</span></div><div class="org">ISTA NTIC · Tanger</div><p>Infrastructure digitale, spécialisation Cloud Computing. Participation au PIE.</p></div>
+<div class="card rv"><div class="row"><h3>Baccalauréat — Sciences Physiques-Chimie</h3><span class="when">2022–2023</span></div><div class="org">Lycée Ibn Al Khatib · Tanger</div><p>Baccalauréat scientifique, option Sciences Physiques.</p></div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="sk-inner">
-    <div class="section-header sr">
-      <div>
-        <div class="section-num">04 — Compétences</div>
-        <div class="section-title">Stack<br>Technique</div>
-      </div>
-    </div>
-    <div class="sk-grid">
-      <div class="sr sl">
-        <div class="skill-cat-title">☁ Cloud & Azure</div>
-        <div class="sk-item"><div class="sk-top"><span class="sk-name">Microsoft Azure</span><span class="sk-pct">72%</span></div><div class="sk-track"><div class="sk-fill sf-r" style="width:72%"></div></div></div>
-        <div class="sk-item"><div class="sk-top"><span class="sk-name">LLM Deployment</span><span class="sk-pct">68%</span></div><div class="sk-track"><div class="sk-fill sf-r" style="width:68%"></div></div></div>
-        <div class="sk-item"><div class="sk-top"><span class="sk-name">Azure Monitor</span><span class="sk-pct">65%</span></div><div class="sk-track"><div class="sk-fill sf-r" style="width:65%"></div></div></div>
-        <div class="sk-item" style="margin-bottom:2rem;"><div class="sk-top"><span class="sk-name">IAM & Sécurité</span><span class="sk-pct">60%</span></div><div class="sk-track"><div class="sk-fill sf-r" style="width:60%"></div></div></div>
-
-        <div class="skill-cat-title" style="color:var(--green2);">⬡ Développement</div>
-        <div class="sk-item"><div class="sk-top"><span class="sk-name">HTML / CSS / JS</span><span class="sk-pct">68%</span></div><div class="sk-track"><div class="sk-fill sf-g" style="width:68%"></div></div></div>
-        <div class="sk-item"><div class="sk-top"><span class="sk-name">PHP</span><span class="sk-pct">60%</span></div><div class="sk-track"><div class="sk-fill sf-g" style="width:60%"></div></div></div>
-        <div class="sk-item"><div class="sk-top"><span class="sk-name">Linux</span><span class="sk-pct">65%</span></div><div class="sk-track"><div class="sk-fill sf-g" style="width:65%"></div></div></div>
-      </div>
-      <div class="sr sr2">
-        <div class="skill-cat-title" style="color:var(--gold);">◈ Soft Skills</div>
-        <div class="soft-grid" style="margin-bottom:2.5rem;">
-          <span class="soft-t">Design Thinking</span>
-          <span class="soft-t">Résilience</span>
-          <span class="soft-t">Gestion du stress</span>
-          <span class="soft-t">Gestion de projet</span>
-          <span class="soft-t">Communication</span>
-          <span class="soft-t">Problem Solving</span>
-          <span class="soft-t">Maîtrise IT</span>
-          <span class="soft-t">Patience</span>
-        </div>
-        <div class="skill-cat-title" style="color:rgba(255,255,255,.4);">◈ Langues</div>
-        <div class="lang-item"><span class="lang-flag">🇲🇦</span><span class="lang-name">Arabe</span><span class="lang-lv ll-r">Natif</span></div>
-        <div class="lang-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-lv ll-g">B2</span></div>
-        <div class="lang-item"><span class="lang-flag">🇬🇧</span><span class="lang-name">Anglais</span><span class="lang-lv ll-g">B2</span></div>
-        <div class="lang-item" style="border-bottom:none;"><span class="lang-flag">🇩🇪</span><span class="lang-name">Allemand</span><span class="lang-lv ll-y">A1</span></div>
-      </div>
-    </div>
-  </div>
+<section id="projets">
+<h2 class="rv">Projets</h2>
+<div class="card rv"><div class="row"><h3>Architecture Cloud pour LLM</h3><span class="when">2025</span></div><div class="org">Projet de stage · MX4.AI</div><p>Architecture Microsoft Azure pour héberger un LLM.</p><div class="tags"><span>Azure</span><span>LLM</span><span>Monitoring</span><span>IAM</span></div></div>
+<div class="card rv"><div class="row"><h3>Système de Vote Électronique</h3><span class="when">2025</span></div><div class="org">Projet académique · EMSI</div><p>Application web de gestion d'élections et base de données relationnelle.</p><div class="tags"><span>PHP</span><span>SQL</span><span>HTML</span><span>CSS</span></div></div>
+<div class="card rv"><div class="row"><h3>Gestion d'Établissement Scolaire</h3><span class="when">2025</span></div><div class="org">Projet académique · EMSI Tanger</div><p>Application orientée objet pour la gestion des élèves, professeurs et classes, en architecture modulaire.</p><div class="tags"><span>C++</span><span>POO</span></div></div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="pr-inner">
-    <div class="section-header sr">
-      <div>
-        <div class="section-num">05 — Projets</div>
-        <div class="section-title">Réalisations</div>
-      </div>
-    </div>
-    <div class="pr-grid">
-      <div class="pr-card sr">
-        <div class="pr-num">01</div>
-        <div class="pr-title">LLM Azure Deploy</div>
-        <p class="pr-desc">Mission réelle chez MX4.AI — déploiement LLM sur Azure, optimisation des coûts et monitoring avancé.</p>
-        <div class="pr-tags"><span class="pr-tag pt-r">Azure</span><span class="pr-tag pt-r">LLM</span><span class="pr-tag pt-r">Monitoring</span></div>
-      </div>
-      <div class="pr-card sr">
-        <div class="pr-num">02</div>
-        <div class="pr-title">E-Voting System</div>
-        <p class="pr-desc">Application web complète pour la gestion d'élections avec interface et base de données relationnelle.</p>
-        <div class="pr-tags"><span class="pr-tag pt-g">PHP</span><span class="pr-tag pt-g">SQL</span><span class="pr-tag pt-g">HTML/CSS</span></div>
-      </div>
-      <div class="pr-card sr">
-        <div class="pr-num">03</div>
-        <div class="pr-title">School Manager C++</div>
-        <p class="pr-desc">Application orientée objet pour la gestion des élèves, professeurs et classes. Architecture modulaire.</p>
-        <div class="pr-tags"><span class="pr-tag pt-y">C++</span><span class="pr-tag pt-y">OOP</span></div>
-      </div>
-    </div>
-  </div>
+<section id="competences">
+<h2 class="rv">Compétences</h2>
+<div class="grid">
+<div class="card sk rv"><h3>Cloud</h3><div>Microsoft Azure · Azure Monitor · IaaS/PaaS/SaaS</div></div>
+<div class="card sk rv" style="--d:.08s"><h3>Sécurité</h3><div>Identités · Chiffrement · Réseaux Azure</div></div>
+<div class="card sk rv"><h3>Systèmes</h3><div>Linux/Ubuntu · Windows · Docker</div></div>
+<div class="card sk rv" style="--d:.08s"><h3>Dev</h3><div>HTML · CSS · JavaScript · PHP · C++</div></div>
+<div class="card sk rv"><h3>Bases</h3><div>SQL · Azure SQL · MCD/MLD</div></div>
+<div class="card sk rv" style="--d:.08s"><h3>Outils</h3><div>Git · VS Code · MS Office</div></div>
+</div>
+<div class="chips rv" style="margin-top:1.1rem"><span>Support technique</span><span>Résolution d'incidents</span><span>Communication</span><span>Gestion du stress</span><span>Esprit d'équipe</span><span>Gestion de projet</span><span>Curiosité</span><span>Adaptabilité</span><span>Rigueur</span></div>
 </section>
 
-<!-- CONTACT -->
+<section id="certifications">
+<h2 class="rv">Certifications &amp; langues</h2>
+<div class="grid">
+<div style="display:flex;flex-direction:column;gap:1.1rem">
+<div class="card rv" style="margin:0"><div class="cr"><div><b>The Unix Workbench</b><small>Johns Hopkins · Coursera</small></div><em>Déc. 2025</em></div></div>
+<div class="card rv" style="margin:0"><div class="cr"><div><b>Interactivity with JavaScript</b><small>Univ. of Michigan · Coursera</small></div><em>Déc. 2025</em></div></div>
+<div class="card rv" style="margin:0"><div class="cr"><div><b>POO en C++</b><small>EPFL · Coursera</small></div><em>Déc. 2025</em></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.1rem">
+<div class="card rv" style="margin:0"><div class="cr"><b>Arabe</b><em>Maternelle</em></div></div>
+<div class="card rv" style="margin:0"><div class="cr"><b>Français</b><em>B2</em></div></div>
+<div class="card rv" style="margin:0"><div class="cr"><b>Anglais</b><em>B2</em></div></div>
+<div class="card rv" style="margin:0"><div class="cr"><b>Allemand</b><em>A1</em></div></div>
+</div>
+</div>
+</section>
+
 <section id="contact">
-  <div class="ct-inner">
-    <div class="ct-giant sr">
-      <span class="stroke">Travaillons</span>
-      <span class="r">Ensemble.</span>
-    </div>
-    <div class="ct-layout">
-      <div class="ct-cards sr sl">
-        <div class="ct-card" onclick="window.open('https://wa.me/212660029134','_blank')">
-          <div class="ct-icon-wrap ci-r">📞</div>
-          <div><div class="ct-type">WhatsApp</div><div class="ct-val">+212 660 029 134</div></div>
-          <div class="ct-arr">→</div>
-        </div>
-        <div class="ct-card" onclick="window.location='mailto:oualidchbarthi@gmail.com'">
-          <div class="ct-icon-wrap ci-g">✉️</div>
-          <div><div class="ct-type">Email</div><div class="ct-val">oualidchbarthi@gmail.com</div></div>
-          <div class="ct-arr">→</div>
-        </div>
-        <div class="ct-card" onclick="window.open('https://www.linkedin.com/in/oualid-echbarthi-10880b313/','_blank')">
-          <div class="ct-icon-wrap ci-b">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <div><div class="ct-type">LinkedIn</div><div class="ct-val">Oualid Echbarthi</div></div>
-          <div class="ct-arr">→</div>
-        </div>
-        <div class="ct-card">
-          <div class="ct-icon-wrap ci-y">📍</div>
-          <div><div class="ct-type">Localisation</div><div class="ct-val">Tanger / Rabat, Maroc</div></div>
-          <div class="ct-arr">→</div>
-        </div>
-      </div>
-      <div class="avail-panel sr sr2">
-        <div class="avail-dot-wrap">
-          <div class="av-dot"></div>
-          <div class="av-status">Disponible maintenant</div>
-        </div>
-        <div class="av-title">Stage &<br>Alternance<br>2025–2026</div>
-        <div class="av-sub">Ouvert à toute opportunité innovante autour du Cloud Computing et de l'Intelligence Artificielle.</div>
-        <div class="av-flag">
-          <div class="af-r"></div>
-          <div class="af-g"></div>
-          <div class="af-txt">Maroc</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<h2 class="rv">Contact</h2>
+<p class="intro rv">Disponible immédiatement pour un <strong>stage ou poste junior</strong> en Cloud Computing, Infrastructure IT ou Support Technique.</p>
+<div class="rv"><a class="cta" href="mailto:oualidchbarthi@gmail.com">Envoyer un email</a><a class="cta o" href="https://wa.me/212660029134" target="_blank" rel="noopener">WhatsApp</a></div>
 </section>
+</main>
 
-<footer>
-  <div class="ft-l">Oualid Echbarthi — Cloud & AI Specialist</div>
-  <div class="ft-r">© 2026 · Tanger, Maroc 🇲🇦</div>
-</footer>
+<footer><b>Oualid Echbarthi</b> · Cloud Computing · Microsoft Azure · IT Infrastructure · © 2026</footer>
 
 <script>
-/* CURSOR */
-const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
-let rx=0,ry=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{
-  tx=e.clientX;ty=e.clientY;
-  dot.style.left=tx+'px';dot.style.top=ty+'px';
-  dot.style.transform='translate(-50%,-50%)';
-});
-(function lerp(){
-  rx+=(tx-rx)*.1;ry+=(ty-ry)*.1;
-  ring.style.left=rx+'px';ring.style.top=ry+'px';
-  ring.style.transform='translate(-50%,-50%)';
-  requestAnimationFrame(lerp);
-})();
-document.querySelectorAll('a,button,.ct-card,.pr-card,.edu-entry,.soft-t').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{ring.style.width='60px';ring.style.height='60px';ring.style.borderColor='rgba(212,175,55,.6)';});
-  el.addEventListener('mouseleave',()=>{ring.style.width='40px';ring.style.height='40px';ring.style.borderColor='rgba(232,25,44,.5)';});
-});
-
-/* NAV scroll */
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.padding=scrollY>50?'1rem 3rem':'1.5rem 3rem';
-});
-
-/* PARTICLES */
-const pc=document.getElementById('ptcls');
-const colors=['#E8192C','#D4AF37','#1B5E3B','rgba(255,255,255,.3)'];
-for(let i=0;i<25;i++){
-  const p=document.createElement('div');
-  const size=Math.random()*4+2;
-  p.className='p';
-  p.style.cssText=`width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;bottom:${Math.random()*30}%;animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*8}s;opacity:.6;`;
-  pc.appendChild(p);
-}
-
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:.1});
-document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
-
-/* SKILL BARS */
-const sbObs=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.sk-fill').forEach(f=>f.classList.add('on'));});
-},{threshold:.3});
-const skSection=document.getElementById('skills');
-if(skSection)sbObs.observe(skSection);
+// Name: letter-by-letter entrance
+const nm=document.getElementById('name');let n=0;
+'Oualid Echbarthi'.split('').forEach(ch=>{
+ if(ch===' '){nm.appendChild(document.createElement('br'));return}
+ const e=document.createElement('span');e.style.setProperty('--i',n++);e.textContent=ch;e.setAttribute('aria-hidden','true');
+ if(n>6)e.className='g';nm.appendChild(e)});
+// Tagline typing loop
+const words=['Cloud Computing','Microsoft Azure','IT Support','Infrastructure IT'],t=document.getElementById('tg');
+let w=0,c=0,d=false;
+(function ty(){const s=words[w];c+=d?-1:1;t.textContent=s.slice(0,c);let ms=d?35:80;
+ if(!d&&c===s.length){d=true;ms=1500}else if(d&&c===0){d=false;w=(w+1)%words.length;ms=300}setTimeout(ty,ms)})();
+// Reveal
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+// Scroll-spy with sliding indicator
+const links=[...document.querySelectorAll('#nav a')],ind=document.getElementById('ind');
+function spy(id){links.forEach((a,i)=>{const on=a.getAttribute('href')==='#'+id;a.classList.toggle('on',on);if(on)ind.style.top=a.offsetTop+(a.offsetHeight-32)/2+'px'})}
+const so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)spy(x.target.id)}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section').forEach(s=>so.observe(s));spy('profil');
+// Card spotlight follows cursor
+document.querySelectorAll('.card').forEach(k=>k.addEventListener('mousemove',e=>{
+ const b=k.getBoundingClientRect();k.style.setProperty('--x',e.clientX-b.left+'px');k.style.setProperty('--y',e.clientY-b.top+'px')}));
 </script>
 </body>
 </html>
